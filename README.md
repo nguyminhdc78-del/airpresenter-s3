@@ -49,3 +49,7 @@ pio test -e native     # unit test trên PC
 ```
 
 ![Bên trong hộp](product_image/9eb01a49-77fc-4597-b739-22675c45007c.jpeg)
+
+## License
+
+[MIT](LICENSE): dùng, sửa, phân phối, kể cả thương mại, miễn giữ lại thông báo bản quyền.
