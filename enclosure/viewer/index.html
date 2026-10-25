@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AirPresenter Enclosure Viewer</title>
+  <link rel="stylesheet" href="viewer-styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="viewer-app.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="title">
+      <strong>AirPresenter S3</strong>
+      <span class="dims">hộp 122 × 44 × 21 mm</span>
+    </div>
+    <nav class="modes" aria-label="Chế độ xem">
+      <button type="button" data-mode="closed" aria-pressed="true">Đóng hộp</button>
+      <button type="button" data-mode="open" aria-pressed="false">Mở nắp</button>
+      <button type="button" data-mode="exploded" aria-pressed="false">Tách lớp</button>
+      <button type="button" data-mode="section" aria-pressed="false">Cắt đôi</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section id="stage" class="stage" aria-label="Mô hình 3D của hộp">
+      <p id="status" class="status">Đang tải mô hình…</p>
+      <p class="hint">Kéo để xoay · chuột phải để di chuyển · cuộn để phóng to · bấm vào chi tiết để xem thông tin</p>
+    </section>
+
+    <aside class="panel">
+      <section id="section-controls" class="group" hidden>
+        <label for="cut" class="label">Vị trí mặt cắt <output id="cut-value" for="cut">x = 0 mm</output></label>
+        <input id="cut" type="range" min="-21" max="21" step="0.5" value="0">
+      </section>
+
+      <section class="group">
+        <h2 class="label">Chi tiết</h2>
+        <ul id="part-list" class="parts"></ul>
+        <label class="check" for="see-through"><input id="see-through" type="checkbox"> Vỏ trong suốt</label>
+        <button id="reset-view" type="button" class="ghost">Đặt lại góc nhìn</button>
+      </section>
+
+      <section id="info" class="group info" aria-live="polite">
+        <h2 class="label">Thông tin</h2>
+        <p class="muted">Bấm vào một chi tiết trên mô hình hoặc trong danh sách.</p>
+      </section>
+    </aside>
+  </main>
+</body>
+</html>
